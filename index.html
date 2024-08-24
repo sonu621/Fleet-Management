@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Fleet Management</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Fleets</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Documents</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="https://www.catgroup.net/wp-content/uploads/2022/09/Group-53-e1666969625763.png" alt="Company Logo" class="logo">
+            <h1>Welcome to Fleet Management</h1>
+            <p>Manage your fleet efficiently</p>
+        </section>
+
+        <section class="dashboard">
+            <h2>Dashboard</h2>
+            <div class="overview">
+                <div class="card">
+                    <h3>Total Fleets</h3>
+                    <p id="totalFleets">0</p>
+                </div>
+                <div class="card">
+                    <h3>Upcoming Maintenance</h3>
+                    <p id="upcomingMaintenance">0</p>
+                </div>
+                <div class="card">
+                    <h3>Maintenance Costs</h3>
+                    <p id="maintenanceCosts">SAR 0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="charts">
+            <div class="chart-container">
+                <div class="chart-section">
+                    <div class="chart-wrapper">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-section">
+                    <div class="chart-wrapper">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-section">
+                    <div class="chart-wrapper">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="search">
+            <input type="text" id="searchFleet" placeholder="Search Fleet by Number">
+            <button id="searchButton">Search</button>
+        </section>
+
+        <section class="fleet-details">
+            <h3>Fleet Details</h3>
+            <table id="fleetResults">
+                <thead>
+                    <tr>
+                        <th>SR.</th>
+                        <th>Fleet</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Capacity</th>
+                        <th>Year</th>
+                        <th>Chass No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic content will be injected here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="documents">
+            <h2>Documents</h2>
+            <div class="upload-container drop-zone" id="dropZone">
+                <input type="file" id="fileInput" multiple>
+                <button id="uploadButton">Upload Files</button>
+                <p>Drag & Drop files here or click to upload</p>
+            </div>
+            <div class="document-list">
+                <h3>Uploaded Documents</h3>
+                <ul id="documentList">
+                    <!-- Document items will be added here dynamically -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fleet Management. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
